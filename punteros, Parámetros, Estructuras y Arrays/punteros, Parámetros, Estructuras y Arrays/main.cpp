@@ -17,7 +17,7 @@ void PrintArray(T pBool[], int tamano) {
     }
 }
 
-void ModArray(bool pBool[], int tamano)
+void ModifyArr(bool pBool[], int tamano)
 {
     for (int i = 0; i < tamano; i++)
     {
@@ -32,7 +32,7 @@ void ModArray(bool pBool[], int tamano)
     }
 }
 
-void ModArray(int iRay[], int tamano)
+void ModifyArr(int iRay[], int tamano)
 {
     for (int i = 0; i < tamano; i++)
     {
@@ -40,7 +40,7 @@ void ModArray(int iRay[], int tamano)
     }
 }
 
-void InArray(int iRay[], int tamano)
+void InitializeArr(int iRay[], int tamano)
 {
     for (int i = 0; i < tamano; i++)
     {
@@ -48,7 +48,7 @@ void InArray(int iRay[], int tamano)
     }
 }
 
-void DiMemo(int iRay[], int tamano)
+void PrintMemory(int iRay[], int tamano)
 {
     for (int i = 0; i < tamano; i++)
     {
@@ -60,14 +60,14 @@ int main()
 {
     bool bo5[] = { true, false, true, true, false };
     PrintArray(bo5, 5);
-    ModArray(bo5, 5);
+    ModifyArr(bo5, 5);
     PrintArray(bo5, 5);
 
     int iArray10[10];
-    InArray(iArray10, 10);
+    InitializeArr(iArray10, 10);
     PrintArray(iArray10, 10);
-    ModArray(iArray10, 10);
+    ModifyArr(iArray10, 10);
     PrintArray(iArray10, 10);
-    DiMemo(iArray10, 10);
+    PrintMemory(iArray10, 10);
     return 0;
 }
