@@ -1,73 +1,16 @@
+#include "ejercicio_uno.h"
+#include "ejercicio_dos.h"
 #include <iostream>
 using namespace std;
 
-template <typename T>
-void PrintArray(T pBool[], int tamano) {
-    cout << "[";
-    for (int i = 0; i < tamano; i++)
-    {
-        if (i < (tamano - 1))
-        {
-            cout << pBool[i] << ", ";
-        }
-        else
-        {
-            cout << pBool[i] << "]" << endl;
-        }
-    }
-}
+int main() {
+	cout << "================= Ejercicio uno =================" << endl;
+	ejercicio_uno();
 
-void ModifyArr(bool pBool[], int tamano)
-{
-    for (int i = 0; i < tamano; i++)
-    {
-        if (i % 2 == 0)
-        {
-            pBool[i] = false;
-        }
-        else
-        {
-            pBool[i] = true;
-        }
-    }
-}
+	cout << endl;
 
-void ModifyArr(int iRay[], int tamano)
-{
-    for (int i = 0; i < tamano; i++)
-    {
-        iRay[i] = iRay[i] % 2;
-    }
-}
+	cout << "================= Ejercicio dos =================" << endl;
+	ejercicio_dos();
 
-void InitializeArr(int iRay[], int tamano)
-{
-    for (int i = 0; i < tamano; i++)
-    {
-        iRay[i] = i;
-    }
-}
-
-void PrintMemory(int iRay[], int tamano)
-{
-    for (int i = 0; i < tamano; i++)
-    {
-        cout << &iRay[i] << ": " << iRay[i] << endl;
-    }
-}
-
-int main()
-{
-    bool bo5[] = { true, false, true, true, false };
-    PrintArray(bo5, 5);
-    ModifyArr(bo5, 5);
-    PrintArray(bo5, 5);
-
-    int iArray10[10];
-    InitializeArr(iArray10, 10);
-    PrintArray(iArray10, 10);
-    ModifyArr(iArray10, 10);
-    PrintArray(iArray10, 10);
-    PrintMemory(iArray10, 10);
-    return 0;
+	return 0;
 }
