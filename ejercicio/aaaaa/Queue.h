@@ -1,4 +1,5 @@
 #pragma once
+#pragma once
 
 #include "SentinelLinkedList.h"
 #include <iostream>
@@ -27,6 +28,6 @@ public:
 
     T Front()
     {
-        return data.Front();
+        return data.NIL->next->data;
     }
 };

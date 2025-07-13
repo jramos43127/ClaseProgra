@@ -26,7 +26,7 @@ public:
     {
         if (count == 0)
         {
-            cout << "Cuidado, estÃ¡s haciendo Pop en una pila vacÃ­a" << endl;
+            cout << "Cuidado, estás haciendo Pop en una pila vacía" << endl;
             return {}; // valor por defecto de T
         }
         T topValue = data.front();
@@ -40,7 +40,7 @@ public:
     {
         if (count == 0)
         {
-            cout << "Cuidado, estÃ¡s haciendo Peek en una pila vacÃ­a" << endl;
+            cout << "Cuidado, estás haciendo Peek en una pila vacía" << endl;
             return {};
         }
         return data.front();

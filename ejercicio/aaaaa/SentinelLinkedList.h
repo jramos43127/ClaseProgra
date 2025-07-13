@@ -30,10 +30,11 @@ private:
     };
 
 private:
-    Node<T>* NIL;
     int count;
 
 public:
+    Node<T>* NIL;
+
     SentinelLinkedList()
     {
         count = 0;
@@ -53,8 +54,8 @@ public:
     void PushBack(T value);
     T PopBack();
 
-    void PushFront(T value);  // Nueva funciÃ³n
-    T PopFront();             // Nueva funciÃ³n
+    void PushFront(T value);  // Nueva función
+    T PopFront();             // Nueva función
 
     void Insert(T valueToInsert, Node<T>* previousNode);
     void Remove(T valueToRemove);
@@ -150,7 +151,7 @@ T SentinelLinkedList<T>::PopBack()
 {
     if (count == 0)
     {
-        cout << "Cuidado, estÃ¡s haciendo pop back cuando ya no hay elementos en esta lista ligada" << endl;
+        cout << "Cuidado, estás haciendo pop back cuando ya no hay elementos en esta lista ligada" << endl;
         return {};
     }
 
@@ -184,7 +185,7 @@ T SentinelLinkedList<T>::PopFront()
 {
     if (count == 0)
     {
-        cout << "Cuidado, estÃ¡s haciendo pop front cuando ya no hay elementos en esta lista ligada" << endl;
+        cout << "Cuidado, estás haciendo pop front cuando ya no hay elementos en esta lista ligada" << endl;
         return {};
     }
 

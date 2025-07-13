@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include <cmath>
@@ -19,14 +20,14 @@ public:
     const string& ObtenerNombreDeFigura() const { return nombre; }
 };
 
-// Clase Círculo
+// Clase Circulo
 class Circulo : public Figura
 {
 private:
     float radio;
 
 public:
-    Circulo(float r) : Figura("Círculo"), radio(r) {}
+    Circulo(float r) : Figura("Circulo"), radio(r) {}
     ~Circulo() override {}
 
     float CalcularArea() const override
@@ -61,7 +62,7 @@ public:
     }
 };
 
-// Clase FiguraNLados (polígono regular de N lados)
+// Clase FiguraNLados (poligono regular de N lados)
 class FiguraNLados : public Figura
 {
 protected:
@@ -115,7 +116,7 @@ public:
     }
 };
 
-// Clase Línea (hereda de Figura)
+// Clase Linea (hereda de Figura)
 class Linea : public Figura
 {
 private:
@@ -123,7 +124,7 @@ private:
     int numSegmentos;
 
 public:
-    Linea(const float* arr, int n) : Figura("Línea"), numSegmentos(n)
+    Linea(const float* arr, int n) : Figura("Linea"), numSegmentos(n)
     {
         segmentos = new float[n];
         for (int i = 0; i < n; i++)
