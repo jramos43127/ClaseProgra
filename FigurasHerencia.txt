@@ -1,0 +1,150 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+// Clase base Figura
+class Figura
+{
+protected:
+    string nombre;
+
+public:
+    Figura(string name) : nombre(name) {}
+    virtual ~Figura() {}
+
+    virtual float CalcularArea() const = 0;
+    virtual float CalcularPerimetro() const = 0;
+
+    const string& ObtenerNombreDeFigura() const { return nombre; }
+};
+
+// Clase Círculo
+class Circulo : public Figura
+{
+private:
+    float radio;
+
+public:
+    Circulo(float r) : Figura("Círculo"), radio(r) {}
+    ~Circulo() override {}
+
+    float CalcularArea() const override
+    {
+        return 3.14159265f * radio * radio;
+    }
+
+    float CalcularPerimetro() const override
+    {
+        return 2 * 3.14159265f * radio;
+    }
+};
+
+// Clase Cuadrado
+class Cuadrado : public Figura
+{
+protected:
+    float lado;
+
+public:
+    Cuadrado(float l) : Figura("Cuadrado"), lado(l) {}
+    ~Cuadrado() override {}
+
+    float CalcularArea() const override
+    {
+        return lado * lado;
+    }
+
+    float CalcularPerimetro() const override
+    {
+        return 4 * lado;
+    }
+};
+
+// Clase FiguraNLados (polígono regular de N lados)
+class FiguraNLados : public Figura
+{
+protected:
+    int numLados;
+    float lado;
+
+public:
+    FiguraNLados(int n, float l) : Figura("Figura de " + to_string(n) + " lados"), numLados(n), lado(l) {}
+    ~FiguraNLados() override {}
+
+    float CalcularArea() const override
+    {
+        return (numLados * lado * lado) / (4.0f * tan(3.14159265f / numLados));
+    }
+
+    float CalcularPerimetro() const override
+    {
+        return numLados * lado;
+    }
+};
+
+// Clase Cubo (hereda de Cuadrado)
+class Cubo : public Cuadrado
+{
+public:
+    Cubo(float l) : Cuadrado(l)
+    {
+        nombre = "Cubo";
+    }
+
+    ~Cubo() override {}
+
+    float Volumen() const
+    {
+        return lado * lado * lado;
+    }
+
+    float Surface() const
+    {
+        return 6 * lado * lado;
+    }
+
+    float CalcularArea() const override
+    {
+        return Surface();
+    }
+
+    float CalcularPerimetro() const override
+    {
+        return 4 * lado;
+    }
+};
+
+// Clase Línea (hereda de Figura)
+class Linea : public Figura
+{
+private:
+    float* segmentos;
+    int numSegmentos;
+
+public:
+    Linea(const float* arr, int n) : Figura("Línea"), numSegmentos(n)
+    {
+        segmentos = new float[n];
+        for (int i = 0; i < n; i++)
+            segmentos[i] = arr[i];
+    }
+
+    ~Linea() override
+    {
+        delete[] segmentos;
+    }
+
+    float CalcularArea() const override
+    {
+        return 0.0f;
+    }
+
+    float CalcularPerimetro() const override
+    {
+        float suma = 0.0f;
+        for (int i = 0; i < numSegmentos; i++)
+            suma += segmentos[i];
+        return suma;
+    }
+};
