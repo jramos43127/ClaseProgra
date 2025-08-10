@@ -1,0 +1,5 @@
+﻿  BinarySearchTree.cpp
+C:\Users\chino\source\repos\BinarySearchthree\BinarySearchthree\BinarySearchTree.cpp(11,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  main.cpp
+  Generating Code...
+  BinarySearchthree.vcxproj -> C:\Users\chino\source\repos\BinarySearchthree\x64\Debug\BinarySearchthree.exe
